@@ -7,22 +7,19 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
   id?: string;
-  variant?: "white" | "gray";
 }
 
-export function Section({ children, className = "", id, variant = "white" }: SectionProps) {
-  const bgClass = variant === "gray" ? "bg-slate-50" : "bg-white";
-  
+export function Section({ children, className = "", id }: SectionProps) {
   return (
     <motion.section
       id={id}
-      className={`relative py-20 md:py-28 px-4 md:px-8 ${bgClass} ${className}`}
+      className={`relative py-20 md:py-32 px-4 md:px-8 ${className}`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8 }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {children}
       </div>
     </motion.section>
@@ -41,20 +38,21 @@ export function SectionTitle({ children, subtitle, className = "", align = "cent
   
   return (
     <motion.div
-      className={`mb-14 ${alignClass} ${className}`}
-      initial={{ opacity: 0, y: 20 }}
+      className={`mb-16 ${alignClass} ${className}`}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6 }}
     >
       {subtitle && (
-        <span className="text-sm font-semibold text-blue-600 tracking-wider uppercase mb-3 block">
+        <span className="text-sm md:text-base font-mono text-purple-400 tracking-wider uppercase mb-4 block">
           {subtitle}
         </span>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
+      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
         {children}
       </h2>
     </motion.div>
   );
 }
+

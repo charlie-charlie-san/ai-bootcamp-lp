@@ -41,7 +41,7 @@ export function Hero() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
                 <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-                2024年度 受講生募集中
+                2026年度 受講生募集中
               </span>
             </motion.div>
 
@@ -52,11 +52,11 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className="text-white">Figmaだけで終わる</span>
+              <span className="text-white whitespace-nowrap">Figmaだけで終わる</span>
               <br />
-              <span className="text-white">デザイナーは、</span>
+              <span className="text-white whitespace-nowrap">デザイナーは、</span>
               <br />
-              <span className="text-blue-400">もう卒業だ。</span>
+              <span className="text-blue-400 whitespace-nowrap">もう卒業だ。</span>
             </motion.h1>
 
             {/* Subheading */}
